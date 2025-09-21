@@ -26,17 +26,18 @@
     }
 
     .nav-container {
-      max-width: 1400px;
+      max-width: 1400px; /* más ancho para escritorio */
+      width: 100%;
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center; /* centra links en desktop */
-      position: relative;      /* permite posicionar logo */
-      padding: 20px 20px;
+      justify-content: center;
+      position: relative;
+      padding: 20px 20px; /* altura mayor */
     }
 
     .logo-nav {
-      position: absolute; /* logo a la izquierda */
+      position: absolute;
       left: 20px;
     }
 
@@ -154,18 +155,18 @@
 
     /* ================== RESPONSIVE NAVBAR & HEADER ================== */
     @media screen and (max-width: 800px) {
-      /* Navbar móvil */
       .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #0f2027;
-        position: absolute;
-        top: 60px;
+        height: 250px; /* altura muy grande */
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        position: relative; /* como segmento que empuja contenido */
+        top: 0;
         right: 0;
         padding: 10px 0;
         z-index: 999;
-        align-items: flex-start; /* links alineados a la izquierda */
+        align-items: flex-start;
       }
 
       .nav-links.show {
@@ -181,11 +182,11 @@
       /* Header móvil */
       header {
         min-height: auto;
-        padding: 60px 20px 40px 20px; /* más padding superior */
+        padding: 60px 20px 40px 20px;
       }
 
       header .header-text {
-        position: relative; /* flujo normal */
+        position: relative;
         top: auto;
         left: auto;
         transform: none;
@@ -285,6 +286,13 @@
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("show");
     }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.remove('show');
+      });
+    });
   </script>
 </body>
 </html>
