@@ -30,13 +30,12 @@
             margin: auto;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Alinea logo a la izq. y menú a la der. */
-            padding: 10px 20px; /* Reduce el padding para hacerlo más pequeño */
+            justify-content: space-between;
+            padding: 10px 20px;
         }
-        
-        /* Ajuste para el contenedor del logo */
+
         .logo-nav img {
-            width: 150px; /* Tamaño del logo */
+            width: 150px;
             height: auto;
             display: block;
         }
@@ -58,7 +57,7 @@
         }
 
         .menu-btn {
-            display: none; /* Oculto por defecto en pantallas grandes */
+            display: none;
             font-size: 2rem;
             color: #fff;
             cursor: pointer;
@@ -151,41 +150,50 @@
         /* ================== RESPONSIVE NAVBAR & HEADER ================== */
         @media screen and (max-width: 800px) {
             .nav-container {
-                justify-content: space-between;
-                align-items: center;
-                padding: 5px 15px; /* Padding más pequeño para móviles */
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 5px 15px;
+                position: relative;
             }
 
             .logo-nav {
-                flex-grow: 0;
-                order: 1; /* Mantiene el logo en el orden 1 */
+                width: 100%;
+                text-align: center;
             }
 
             .logo-nav img {
-                width: 120px; /* Tamaño del logo en móviles */
+                width: 120px;
+                height: auto;
             }
 
             .menu-btn {
-                display: block; /* Muestra el botón de menú */
-                order: 2; /* Mantiene el botón de menú en el orden 2 */
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                cursor: pointer;
+                padding: 5px 10px;
+                margin: 0;
+                z-index: 1001;
             }
 
             .nav-links {
-                position: absolute; /* Saca el menú del flujo normal */
-                top: 100%; /* Lo posiciona justo debajo del nav-container */
-                left: 0;
                 flex-direction: column;
                 width: 100%;
                 max-height: 0;
                 overflow: hidden;
                 background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-                transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-                z-index: 999;
+                margin-top: 10px;
+                border-radius: 0 0 8px 8px;
+                transition: max-height 0.5s ease-in-out;
             }
 
             .nav-links.show {
                 max-height: 500px;
-                padding: 20px 0; /* Agrega padding para que no se pegue al borde */
+                overflow: auto;
+                padding-bottom: 20px;
             }
 
             .nav-links a {
