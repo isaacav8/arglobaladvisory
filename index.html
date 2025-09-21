@@ -152,24 +152,41 @@
       text-decoration: underline;
     }
 
-    /* ================== RESPONSIVE NAVBAR ================== */
+    /* ================== RESPONSIVE NAVBAR & HEADER ================== */
     @media screen and (max-width: 800px) {
+      /* Navbar móvil */
       .nav-links {
-        display: none;           /* oculto por defecto */
-        flex-direction: column;  
-        width: 100%;             
-        background: #0f2027;     
-        position: absolute;      /* se superpone al contenido */
-        top: 60px;               /* debajo del navbar */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #0f2027;
+        position: absolute;
+        top: 60px;
         left: 0;
         padding: 10px 0;
-        z-index: 999;            
+        z-index: 999;
+        align-items: flex-start; /* links alineados a la izquierda */
       }
+
       .nav-links.show {
-        display: flex;           /* se despliega al hacer clic */
+        display: flex;
       }
+
       .menu-btn {
-        display: block;          /* se ve el botón hamburguesa */
+        display: block;
+      }
+
+      /* Header móvil */
+      header {
+        min-height: auto;
+        padding: 60px 20px 40px 20px; /* más padding superior */
+      }
+
+      header .header-text {
+        position: relative; /* flujo normal */
+        top: auto;
+        left: auto;
+        transform: none;
       }
     }
   </style>
