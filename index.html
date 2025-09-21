@@ -6,7 +6,7 @@
   <title>AR Global Advisory</title>
   <style>
     html {
-      scroll-behavior: smooth; /* ✅ Smooth scroll */
+      scroll-behavior: smooth; /* Smooth scroll */
     }
     body {
       margin: 0;
@@ -25,6 +25,7 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap; /* permite que los links pasen a otra línea en móvil */
     }
     nav a {
       color: #fff;
@@ -37,6 +38,15 @@
       color: #00c3ff;
     }
 
+    /* Responsive navbar en móviles */
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+
     header {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
@@ -45,18 +55,19 @@
       align-items: center;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap; /* que el logo y texto se acomoden en móvil */
     }
     header img {
-      width: 180px;
-      height: 180px;
+      width: 220px; /* antes 180px */
+      height: 220px; /* antes 180px */
       object-fit: cover;
-      border-radius: 8px; /* esquinas suaves */
+      border-radius: 8px;
       background: #fff;
       padding: 5px;
     }
     header .header-text {
       max-width: 700px;
-      text-align: center; /* texto centrado */
+      text-align: center;
     }
     header h1 {
       font-size: 3rem;
@@ -95,7 +106,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .team img {
-      width: 200px;
+      width: 200px; /* más grande */
       height: 200px;
       object-fit: cover;
       border-radius: 50%;
