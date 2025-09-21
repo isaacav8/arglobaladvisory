@@ -49,45 +49,61 @@
 
     /* 🔹 HEADER */
     header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      padding: 40px 20px;
-      display: flex;
-      align-items: center; /* centra verticalmente */
-      justify-content: flex-start; /* logo a la izquierda */
-      gap: 30px;
-      flex-wrap: wrap; /* que se acomode en móviles */
-    }
-    header img {
-      width: 250px;   /* más ancho que alto */
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      background: #fff;
-      padding: 5px;
-    }
-    header .header-text {
-      max-width: 700px;
-      text-align: left; /* texto alineado junto al logo */
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin: 5px 0;
-    }
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 40px 20px;
+  position: relative; /* para poder posicionar texto centrado */
+  min-height: 220px;   /* altura mínima para el logo */
+}
 
-    /* Responsive header */
-    @media screen and (max-width: 800px) {
-      header {
-        justify-content: center;
-      }
-      header .header-text {
-        text-align: center;
-      }
-    }
+header img {
+  width: 250px;   
+  height: auto;   
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff;
+  padding: 5px;
+  position: absolute; /* logo a la izquierda */
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* centra verticalmente */
+}
+
+header .header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra horizontal y vertical */
+  text-align: center;
+  max-width: 700px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+/* Responsive header */
+@media screen and (max-width: 800px) {
+  header img {
+    position: relative;
+    left: auto;
+    transform: none;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+  header .header-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
 
     /* 🔹 SECCIONES */
     section {
