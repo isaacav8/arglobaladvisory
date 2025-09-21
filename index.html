@@ -33,16 +33,19 @@
       align-items: center;
       justify-content: center; /* opciones centradas en PC */
       position: relative;
-      padding: 10px 20px;
+      padding: 15px 20px; /* altura ligeramente mayor que el logo */
+      min-height: 70px; /* asegura altura mínima del navbar */
     }
 
     .logo-nav {
       position: absolute;
       left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .logo-nav img {
-      width: 150px;
+      width: 150px; /* tamaño del logo */
       height: auto;
       display: block;
     }
@@ -69,7 +72,7 @@
       color: #fff;
       cursor: pointer;
       position: absolute;
-      right: 20px; /* dentro del borde */
+      right: 20px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 1001;
@@ -168,7 +171,7 @@
       .nav-links {
         flex-direction: column;
         position: absolute;
-        top: 100%; /* justo debajo de navbar */
+        top: 100%; /* justo debajo del navbar */
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
@@ -192,8 +195,8 @@
 
       .nav-container {
         justify-content: space-between;
-        padding: 5px 15px;
-        height: auto;
+        padding: 15px 20px; /* mismo que PC */
+        min-height: 70px; /* misma altura que PC */
       }
 
       header {
@@ -300,7 +303,7 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         const navHeight = document.querySelector('nav').offsetHeight;
-        const extraMargin = 10; // margen extra
+        const extraMargin = 10;
         const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - extraMargin;
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
         document.getElementById("navLinks").classList.remove('show');
