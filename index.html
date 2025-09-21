@@ -30,8 +30,14 @@
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* centra links en desktop */
+      position: relative;      /* permite posicionar logo */
       padding: 10px 20px;
+    }
+
+    .logo-nav {
+      position: absolute; /* logo a la izquierda */
+      left: 20px;
     }
 
     .logo-nav img {
@@ -62,22 +68,6 @@
       cursor: pointer;
     }
 
-    /* Responsive navbar */
-    @media screen and (max-width: 800px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #0f2027;
-      }
-      .nav-links.show {
-        display: flex;
-      }
-      .menu-btn {
-        display: block;
-      }
-    }
-
     /* ================== HEADER ================== */
     header {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -85,16 +75,6 @@
       padding: 40px 20px;
       position: relative;
       min-height: 220px;
-    }
-
-    header img {
-      width: 250px;
-      height: auto;
-      object-fit: cover;
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
     header .header-text {
@@ -114,23 +94,6 @@
     header p {
       font-size: 1.2rem;
       margin: 5px 0;
-    }
-
-    @media screen and (max-width: 800px) {
-      header img {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        display: block;
-        margin: 0 auto 20px auto;
-      }
-      header .header-text {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-      }
     }
 
     /* ================== SECCIONES ================== */
@@ -188,6 +151,27 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* ================== RESPONSIVE NAVBAR ================== */
+    @media screen and (max-width: 800px) {
+      .nav-links {
+        display: none;           /* oculto por defecto */
+        flex-direction: column;  
+        width: 100%;             
+        background: #0f2027;     
+        position: absolute;      /* se superpone al contenido */
+        top: 60px;               /* debajo del navbar */
+        left: 0;
+        padding: 10px 0;
+        z-index: 999;            
+      }
+      .nav-links.show {
+        display: flex;           /* se despliega al hacer clic */
+      }
+      .menu-btn {
+        display: block;          /* se ve el botón hamburguesa */
+      }
+    }
   </style>
 </head>
 <body>
@@ -195,7 +179,7 @@
   <nav>
     <div class="nav-container">
       <div class="logo-nav">
-        <img src="fotos/Logo.PNG" alt="Logo AR Global Advisory">
+        <img src="fotos/Logo.png" alt="Logo AR Global Advisory">
       </div>
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
       <div class="nav-links" id="navLinks">
@@ -211,7 +195,6 @@
 
   <!-- HEADER -->
   <header id="home">
-    <img src="fotos/Logo.PNG" alt="Logo AR Global Advisory">
     <div class="header-text">
       <h1>AR Global Advisory</h1>
       <p>“Tu aliado estratégico para decisiones empresariales”</p>
