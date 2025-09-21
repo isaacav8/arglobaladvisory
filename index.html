@@ -14,8 +14,23 @@
     header {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
-      padding: 60px 20px;
-      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      text-align: left;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px; /* cuadrado con esquinas redondeadas */
+      background: #fff;
+      padding: 5px;
+    }
+    header .header-text {
+      max-width: 700px;
     }
     header h1 {
       font-size: 3rem;
@@ -23,8 +38,7 @@
     }
     header p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
+      margin: 5px 0;
     }
     section {
       padding: 60px 20px;
@@ -77,9 +91,12 @@
 <body>
   <!-- Home -->
   <header>
-    <h1>AR Global Advisory</h1>
-    <p>“Tu aliado estratégico para decisiones empresariales”</p>
-    <p>Brindamos asesoría integral de negocios para impulsar el crecimiento sostenible de nuestros clientes.</p>
+    <img src="fotos/logo.jpg" alt="Logo AR Global Advisory">
+    <div class="header-text">
+      <h1>AR Global Advisory</h1>
+      <p>“Tu aliado estratégico para decisiones empresariales”</p>
+      <p>Brindamos asesoría integral de negocios para impulsar el crecimiento sostenible de nuestros clientes.</p>
+    </div>
   </header>
 
   <!-- Nuestro Enfoque -->
@@ -116,7 +133,7 @@
       <div class="card">📈 Consultoría Estratégica</div>
       <div class="card">⚖️ Consultoría Legal</div>
       <div class="card">📢 Consultoría Comercial</div>
-      <div class="card">👥 Consultoría Gestion de Talento Humano</div>
+      <div class="card">👥 Consultoría Gestión de Talento Humano</div>
     </div>
   </section>
 
