@@ -45,7 +45,7 @@
     }
 
     .logo-nav img {
-      width: 150px; /* tamaño del logo */
+      width: 150px;
       height: auto;
       display: block;
     }
@@ -72,7 +72,7 @@
       color: #fff;
       cursor: pointer;
       position: absolute;
-      right: 20px;
+      right: 25px; /* margen extra del borde derecho */
       top: 50%;
       transform: translateY(-50%);
       z-index: 1001;
@@ -308,6 +308,15 @@
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
         document.getElementById("navLinks").classList.remove('show');
       });
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', function(e) {
+      const navLinks = document.getElementById("navLinks");
+      const menuBtn = document.querySelector('.menu-btn');
+      if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('show');
+      }
     });
   </script>
 </body>
