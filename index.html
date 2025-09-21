@@ -6,8 +6,9 @@
   <title>AR Global Advisory</title>
   <style>
     html {
-      scroll-behavior: smooth; /* Smooth scroll */
+      scroll-behavior: smooth;
     }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -15,99 +16,130 @@
       color: #333;
     }
 
-    /* 🔹 NAVBAR */
+    /* ================== NAVBAR ================== */
     nav {
       background: #0f2027;
-      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap; /* links pasan a otra línea en móvil */
+      width: 100%;
     }
-    nav a {
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo-nav img {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
       color: #fff;
       text-decoration: none;
-      font-size: 1rem;
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover {
+
+    .nav-links a:hover {
       color: #00c3ff;
     }
 
+    .menu-btn {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
     /* Responsive navbar */
-    @media screen and (max-width: 600px) {
-      nav {
+    @media screen and (max-width: 800px) {
+      .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        width: 100%;
+        background: #0f2027;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .menu-btn {
+        display: block;
       }
     }
 
-    /* 🔹 HEADER */
+    /* ================== HEADER ================== */
     header {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  padding: 40px 20px;
-  position: relative; /* para poder posicionar texto centrado */
-  min-height: 220px;   /* altura mínima para el logo */
-}
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 40px 20px;
+      position: relative;
+      min-height: 220px;
+    }
 
-header img {
-  width: 250px;   
-  height: auto;   
-  object-fit: cover;
-  position: absolute; /* logo a la izquierda */
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%); /* centra verticalmente */
-}
+    header img {
+      width: 250px;
+      height: auto;
+      object-fit: cover;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-header .header-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* centra horizontal y vertical */
-  text-align: center;
-  max-width: 700px;
-}
+    header .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 700px;
+    }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-header p {
-  font-size: 1.2rem;
-  margin: 5px 0;
-}
+    header p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
 
-/* Responsive header */
-@media screen and (max-width: 800px) {
-  header img {
-    position: relative;
-    left: auto;
-    transform: none;
-    display: block;
-    margin: 0 auto 20px auto;
-  }
-  header .header-text {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-  }
-}
+    @media screen and (max-width: 800px) {
+      header img {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
+      header .header-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+      }
+    }
 
-    /* 🔹 SECCIONES */
+    /* ================== SECCIONES ================== */
     section {
       padding: 100px 20px;
       max-width: 1200px;
       margin: auto;
     }
+
     section h2 {
       text-align: center;
       margin-bottom: 30px;
@@ -121,6 +153,7 @@ header p {
       gap: 20px;
       justify-content: center;
     }
+
     .card {
       flex: 1 1 250px;
       border: 1px solid #ddd;
@@ -130,6 +163,7 @@ header p {
       background: #f9f9f9;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .team img {
       width: 200px;
       height: 200px;
@@ -138,36 +172,46 @@ header p {
       margin-bottom: 15px;
     }
 
-    /* 🔹 FOOTER */
+    /* ================== FOOTER ================== */
     footer {
       background: #203a43;
       color: #fff;
       text-align: center;
       padding: 30px 20px;
     }
+
     footer a {
       color: #00c3ff;
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- 🔹 NAVBAR -->
+  <!-- NAVBAR -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#enfoque">Nuestro Enfoque</a>
-    <a href="#quienes">Quienes Somos</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contáctanos</a>
+    <div class="nav-container">
+      <div class="logo-nav">
+        <img src="fotos/Logo.png" alt="Logo AR Global Advisory">
+      </div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#enfoque">Nuestro Enfoque</a>
+        <a href="#quienes">Quienes Somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contáctanos</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- Home / Header -->
+  <!-- HEADER -->
   <header id="home">
-    <img src="fotos/Logo.PNG" alt="Logo AR Global Advisory">
+    <img src="fotos/Logo.png" alt="Logo AR Global Advisory">
     <div class="header-text">
       <h1>AR Global Advisory</h1>
       <p>“Tu aliado estratégico para decisiones empresariales”</p>
@@ -232,5 +276,13 @@ header p {
     <p>📞 +593 96 387 2973 | 📞 +1 561 913 7969</p>
     <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p>
   </footer>
+
+  <!-- JS para menu hamburguesa -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
