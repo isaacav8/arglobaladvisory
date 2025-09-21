@@ -25,7 +25,7 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      flex-wrap: wrap; /* permite que los links pasen a otra línea en móvil */
+      flex-wrap: wrap; /* links pasan a otra línea en móvil */
     }
     nav a {
       color: #fff;
@@ -38,7 +38,7 @@
       color: #00c3ff;
     }
 
-    /* Responsive navbar en móviles */
+    /* Responsive navbar */
     @media screen and (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -47,19 +47,20 @@
       }
     }
 
+    /* 🔹 HEADER */
     header {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       padding: 40px 20px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: center; /* centra verticalmente */
+      justify-content: flex-start; /* logo a la izquierda */
       gap: 30px;
-      flex-wrap: wrap; /* que el logo y texto se acomoden en móvil */
+      flex-wrap: wrap; /* que se acomode en móviles */
     }
     header img {
-      width: 220px; /* antes 180px */
-      height: 220px; /* antes 180px */
+      width: 250px;   /* más ancho que alto */
+      height: auto;
       object-fit: cover;
       border-radius: 8px;
       background: #fff;
@@ -67,7 +68,7 @@
     }
     header .header-text {
       max-width: 700px;
-      text-align: center;
+      text-align: left; /* texto alineado junto al logo */
     }
     header h1 {
       font-size: 3rem;
@@ -78,6 +79,17 @@
       margin: 5px 0;
     }
 
+    /* Responsive header */
+    @media screen and (max-width: 800px) {
+      header {
+        justify-content: center;
+      }
+      header .header-text {
+        text-align: center;
+      }
+    }
+
+    /* 🔹 SECCIONES */
     section {
       padding: 100px 20px;
       max-width: 1200px;
@@ -106,13 +118,14 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .team img {
-      width: 200px; /* más grande */
+      width: 200px;
       height: 200px;
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 15px;
     }
 
+    /* 🔹 FOOTER */
     footer {
       background: #203a43;
       color: #fff;
@@ -141,7 +154,7 @@
 
   <!-- Home / Header -->
   <header id="home">
-    <img src="fotos/Logo.png" alt="Logo AR Global Advisory">
+    <img src="fotos/Logo.PNG" alt="Logo AR Global Advisory">
     <div class="header-text">
       <h1>AR Global Advisory</h1>
       <p>“Tu aliado estratégico para decisiones empresariales”</p>
