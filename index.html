@@ -291,14 +291,18 @@
 
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Scroll ajustado para considerar la altura del navbar
+        const target = document.querySelector(this.getAttribute('href'));
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+
+        // Cierra el menú hamburguesa
         const navLinks = document.getElementById("navLinks");
         navLinks.classList.remove('show');
-
-        // Scroll ajustado para que el título quede visible
-        const target = document.querySelector(this.getAttribute('href'));
-        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 0; // ajusta si quieres margen
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
-        e.preventDefault();
       });
     });
   </script>
