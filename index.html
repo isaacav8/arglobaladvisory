@@ -31,9 +31,14 @@
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* opciones centradas en PC */
       position: relative;
       padding: 10px 20px;
+    }
+
+    .logo-nav {
+      position: absolute;
+      left: 20px;
     }
 
     .logo-nav img {
@@ -63,6 +68,11 @@
       font-size: 2rem;
       color: #fff;
       cursor: pointer;
+      position: absolute;
+      right: 20px; /* dentro del borde */
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1001;
     }
 
     /* ================== HEADER ================== */
@@ -153,13 +163,12 @@
     @media screen and (max-width: 800px) {
       .menu-btn {
         display: block;
-        z-index: 1001;
       }
 
       .nav-links {
         flex-direction: column;
         position: absolute;
-        top: 100%; /* justo debajo de la navbar */
+        top: 100%; /* justo debajo de navbar */
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
@@ -182,6 +191,7 @@
       }
 
       .nav-container {
+        justify-content: space-between;
         padding: 5px 15px;
         height: auto;
       }
@@ -229,16 +239,12 @@
     </div>
   </header>
 
-  <!-- Nuestro Enfoque -->
+  <!-- Secciones -->
   <section id="enfoque">
     <h2>Nuestro Enfoque</h2>
-    <p>
-      En AR Global Advisory trabajamos bajo un enfoque basado en datos, análisis profundo y visión estratégica.
-      Creemos en acompañar a nuestros clientes como socios, entendiendo sus retos y diseñando soluciones a medida para cada etapa de su negocio.
-    </p>
+    <p>En AR Global Advisory trabajamos bajo un enfoque basado en datos, análisis profundo y visión estratégica. Creemos en acompañar a nuestros clientes como socios, entendiendo sus retos y diseñando soluciones a medida para cada etapa de su negocio.</p>
   </section>
 
-  <!-- Quienes Somos -->
   <section id="quienes" class="team">
     <h2>Quienes Somos</h2>
     <div class="flex">
@@ -255,7 +261,6 @@
     </div>
   </section>
 
-  <!-- Nuestros Servicios -->
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
     <div class="flex">
@@ -267,7 +272,6 @@
     </div>
   </section>
 
-  <!-- Proyectos -->
   <section id="proyectos">
     <h2>Proyectos</h2>
     <div class="flex">
@@ -279,7 +283,6 @@
     </div>
   </section>
 
-  <!-- Contáctanos -->
   <footer id="contacto">
     <h2>Contáctanos</h2>
     <p>📩 iaviles@arglobaladvisory.com | 📩 mjromero@arglobaladvisory.com</p>
@@ -287,26 +290,20 @@
     <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p>
   </footer>
 
-  <!-- JS para menu hamburguesa -->
   <script>
     function toggleMenu() {
-      const navLinks = document.getElementById("navLinks");
-      navLinks.classList.toggle("show");
+      document.getElementById("navLinks").classList.toggle("show");
     }
 
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-
         const target = document.querySelector(this.getAttribute('href'));
         const navHeight = document.querySelector('nav').offsetHeight;
-        const extraMargin = 10; // margen extra en px
+        const extraMargin = 10; // margen extra
         const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - extraMargin;
-
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
-
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.remove('show');
+        document.getElementById("navLinks").classList.remove('show');
       });
     });
   </script>
