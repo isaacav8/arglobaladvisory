@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR Global Advisory</title>
   <style>
+    html {
+      scroll-behavior: smooth; /* ✅ Smooth scroll */
+    }
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -47,13 +50,13 @@
       width: 120px;
       height: 120px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 8px; /* esquinas suaves */
       background: #fff;
       padding: 5px;
     }
     header .header-text {
       max-width: 700px;
-      text-align: center;
+      text-align: center; /* texto centrado */
     }
     header h1 {
       font-size: 3rem;
@@ -63,6 +66,7 @@
       font-size: 1.2rem;
       margin: 5px 0;
     }
+
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -74,6 +78,7 @@
       font-size: 2rem;
       color: #2c5364;
     }
+
     .flex {
       display: flex;
       flex-wrap: wrap;
@@ -96,6 +101,7 @@
       border-radius: 50%;
       margin-bottom: 15px;
     }
+
     footer {
       background: #203a43;
       color: #fff;
@@ -114,6 +120,7 @@
 <body>
   <!-- 🔹 NAVBAR -->
   <nav>
+    <a href="#home">Home</a>
     <a href="#enfoque">Nuestro Enfoque</a>
     <a href="#quienes">Quienes Somos</a>
     <a href="#servicios">Servicios</a>
@@ -121,8 +128,8 @@
     <a href="#contacto">Contáctanos</a>
   </nav>
 
-  <!-- Home -->
-  <header>
+  <!-- Home / Header -->
+  <header id="home">
     <img src="fotos/logo.jpg" alt="Logo AR Global Advisory">
     <div class="header-text">
       <h1>AR Global Advisory</h1>
