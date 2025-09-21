@@ -156,28 +156,30 @@
     /* ================== RESPONSIVE NAVBAR & HEADER ================== */
     @media screen and (max-width: 800px) {
       .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        height: auto;
       }
 
       .logo-nav {
-        margin-bottom: 10px;
         position: relative;
         left: auto;
       }
 
       .logo-nav img {
-        width: 120px; 
+        width: 120px;
         height: auto;
+        display: block;
       }
 
       .menu-btn {
         display: block;
         font-size: 2rem;
-        align-self: flex-end;
         cursor: pointer;
         padding: 5px 10px;
+        margin: 0;
         z-index: 1001;
       }
 
@@ -187,13 +189,13 @@
         max-height: 0;
         overflow: hidden;
         background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        margin-top: 10px;
+        margin-top: 0;
         border-radius: 0 0 8px 8px;
         transition: max-height 0.3s ease-out;
       }
 
       .nav-links.show {
-        max-height: 500px; /* ajusta según cantidad de links */
+        max-height: 500px;
       }
 
       .nav-links a {
@@ -202,7 +204,6 @@
         box-sizing: border-box;
       }
 
-      /* Header móvil */
       header {
         min-height: auto;
         padding: 60px 20px 40px 20px;
