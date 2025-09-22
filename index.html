@@ -35,28 +35,27 @@
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center; /* opciones centradas en PC */
+      justify-content: center;
       position: relative;
-      padding: 15px 20px; /* altura ligeramente mayor que el logo */
-      min-height: 70px; /* asegura altura mínima del navbar */
+      padding: 20px 20px;
+      min-height: 80px; /* 🔹 altura mínima para no comprimir el navbar */
     }
 
     .logo-nav {
       position: absolute;
       left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
     .logo-nav img {
-      width: 150px;
+      width: 180px;
       height: auto;
-      display: block;
     }
 
     .nav-links {
       display: flex;
       gap: 25px;
+      justify-content: center;
+      flex: 1;
     }
 
     .nav-links a {
@@ -76,10 +75,9 @@
       color: #fff;
       cursor: pointer;
       position: absolute;
-      right: 40px; /* margen extra del borde derecho */
+      right: 20px; /* 🔹 pegada pero dentro del borde */
       top: 50%;
       transform: translateY(-50%);
-      z-index: 1001;
     }
 
     /* ================== HEADER ================== */
@@ -112,6 +110,7 @@
 
     /* ================== SECCIONES ================== */
     section {
+      scroll-margin-top: 90px; /* 🔹 margen extra al hacer scroll por navbar fijo */
       padding: 100px 20px;
       max-width: 1200px;
       margin: auto;
@@ -166,41 +165,55 @@
       text-decoration: underline;
     }
 
-    /* ================== RESPONSIVE NAVBAR ================== */
+    /* ================== RESPONSIVE NAVBAR & HEADER ================== */
     @media screen and (max-width: 800px) {
+      .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        min-height: 80px; /* 🔹 altura mínima en móvil */
+      }
+
+      .logo-nav {
+        position: relative;
+        left: auto;
+      }
+
+      .logo-nav img {
+        width: 150px;
+        height: auto;
+        display: block;
+      }
+
       .menu-btn {
         display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
       }
 
       .nav-links {
         flex-direction: column;
-        position: absolute;
-        top: 100%; /* justo debajo del navbar */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 300px;
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        border-radius: 8px;
-        overflow: hidden;
+        align-items: center;
+        width: 100%;
         max-height: 0;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        margin-top: 0;
+        border-radius: 0 0 8px 8px;
         transition: max-height 0.3s ease-out;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       }
 
       .nav-links.show {
-        max-height: 600px;
+        max-height: 500px;
       }
 
       .nav-links a {
-        padding: 15px 20px;
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
         text-align: center;
-      }
-
-      .nav-container {
-        justify-content: space-between;
-        padding: 15px 20px; /* mismo que PC */
-        min-height: 70px; /* misma altura que PC */
       }
 
       header {
@@ -246,12 +259,16 @@
     </div>
   </header>
 
-  <!-- Secciones -->
+  <!-- Nuestro Enfoque -->
   <section id="enfoque">
     <h2>Nuestro Enfoque</h2>
-    <p>En AR Global Advisory trabajamos bajo un enfoque basado en datos, análisis profundo y visión estratégica. Creemos en acompañar a nuestros clientes como socios, entendiendo sus retos y diseñando soluciones a medida para cada etapa de su negocio.</p>
+    <p>
+      En AR Global Advisory trabajamos bajo un enfoque basado en datos, análisis profundo y visión estratégica.
+      Creemos en acompañar a nuestros clientes como socios, entendiendo sus retos y diseñando soluciones a medida para cada etapa de su negocio.
+    </p>
   </section>
 
+  <!-- Quienes Somos -->
   <section id="quienes" class="team">
     <h2>Quienes Somos</h2>
     <div class="flex">
@@ -268,6 +285,7 @@
     </div>
   </section>
 
+  <!-- Nuestros Servicios -->
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
     <div class="flex">
@@ -279,6 +297,7 @@
     </div>
   </section>
 
+  <!-- Proyectos -->
   <section id="proyectos">
     <h2>Proyectos</h2>
     <div class="flex">
@@ -290,6 +309,7 @@
     </div>
   </section>
 
+  <!-- Contáctanos -->
   <footer id="contacto">
     <h2>Contáctanos</h2>
     <p>📩 iaviles@arglobaladvisory.com | 📩 mjromero@arglobaladvisory.com</p>
@@ -297,29 +317,26 @@
     <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p>
   </footer>
 
+  <!-- JS para menu hamburguesa -->
   <script>
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
     }
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const navHeight = document.querySelector('nav').offsetHeight;
-        const extraMargin = 10;
-        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - extraMargin;
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
-        document.getElementById("navLinks").classList.remove('show');
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.remove('show');
       });
     });
 
-    // Cerrar menú al hacer click fuera
-    document.addEventListener('click', function(e) {
+    // 🔹 Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', (event) => {
       const navLinks = document.getElementById("navLinks");
-      const menuBtn = document.querySelector('.menu-btn');
-      if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-        navLinks.classList.remove('show');
+      const menuBtn = document.querySelector(".menu-btn");
+      if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) {
+        navLinks.classList.remove("show");
       }
     });
   </script>
