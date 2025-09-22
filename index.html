@@ -3,230 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AR Global Advisory</title>
+  <title>Consultoría Estratégica y Financiera | AR Global Advisory</title>
 
   <!-- SEO -->
-  <meta name="description" content="AR Global Advisory ofrece asesoría integral en finanzas, estrategia empresarial y expansión de negocios. Impulsamos el crecimiento sostenible mediante análisis de datos, planificación estratégica y experiencia corporativa.">
+  <meta name="description" content="AR Global Advisory ofrece consultoría estratégica, financiera, legal y comercial en Ecuador, Estados Unidos y Latinoamérica. Impulsamos el crecimiento sostenible de tu empresa.">
+  <meta name="keywords" content="consultoría financiera, estrategia empresarial, análisis de datos, AR Global Advisory, asesoría corporativa, expansión de negocios">
   <link rel="canonical" href="https://www.arglobaladvisory.com/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AR Global Advisory">
-  <meta property="og:description" content="Ofrecemos asesoría integral en finanzas, estrategia empresarial y expansión de negocios para impulsar el crecimiento sostenible de nuestros clientes.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.arglobaladvisory.com/">
+  <meta property="og:title" content="Consultoría Estratégica y Financiera | AR Global Advisory">
+  <meta property="og:description" content="Consultoría integral en finanzas, estrategia y expansión empresarial para impulsar tu crecimiento.">
   <meta property="og:image" content="https://www.arglobaladvisory.com/fotos/Logo.PNG">
+  <meta property="og:url" content="https://www.arglobaladvisory.com/">
+  <meta property="og:site_name" content="AR Global Advisory">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consultoría Estratégica y Financiera | AR Global Advisory">
+  <meta name="twitter:description" content="Impulsamos empresas con consultoría estratégica y financiera en Ecuador, EE.UU. y Latinoamérica.">
+  <meta name="twitter:image" content="https://www.arglobaladvisory.com/fotos/Logo.PNG">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.arglobaladvisory.com/fotos/favicon.ico" type="image/x-icon">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    nav { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); position: sticky; top: 0; z-index: 1000; width: 100%; }
+    .nav-container { max-width: 1400px; width: 100%; margin: auto; display: flex; align-items: center; justify-content: center; position: relative; padding: 15px 20px; min-height: 70px; }
+    .logo-nav { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+    .logo-nav img { width: 150px; height: auto; display: block; }
+    .nav-links { display: flex; gap: 25px; }
+    .nav-links a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    .nav-links a:hover { color: #00c3ff; }
+    .menu-btn { display: none; font-size: 2rem; color: #fff; cursor: pointer; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); z-index: 1001; }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
+    /* HEADER */
+    header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #fff; padding: 40px 20px; position: relative; min-height: 220px; }
+    header .header-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; max-width: 700px; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; margin: 10px 0; line-height: 1.8; }
 
-    /* ================== NAVBAR ================== */
-    nav {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-    }
+    /* SECCIONES */
+    section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+    section h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: #2c5364; }
+    .flex { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { flex: 1 1 250px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; background: #f9f9f9; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .team img { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; }
 
-    .nav-container {
-      max-width: 1400px;
-      width: 100%;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 15px 20px;
-      min-height: 70px;
-    }
+    /* Sección "Nuestro Enfoque" alineada con Home */
+    #enfoque { padding-top: 220px; padding-bottom: 100px; }
+    #enfoque p { max-width: 900px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
 
-    .logo-nav {
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    footer { background: #203a43; color: #fff; text-align: center; padding: 30px 20px; }
+    footer a { color: #00c3ff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-    .logo-nav img {
-      width: 150px;
-      height: auto;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #00c3ff;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      position: absolute;
-      right: 25px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1001;
-    }
-
-    /* ================== HEADER ================== */
-    header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      padding: 40px 20px;
-      position: relative;
-      min-height: 220px;
-    }
-
-    header .header-text {
-      position: relative;
-      top: auto;
-      left: auto;
-      transform: none;
-      text-align: center;
-      max-width: 700px;
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 5px 0;
-    }
-
-    /* ================== SECCIONES ================== */
-    section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #2c5364;
-    }
-
-    .flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      flex: 1 1 250px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      background: #f9f9f9;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .team img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-
-    /* ================== FOOTER ================== */
-    footer {
-      background: #203a43;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer a {
-      color: #00c3ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ================== RESPONSIVE NAVBAR ================== */
     @media screen and (max-width: 800px) {
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 300px;
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        border-radius: 8px;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.3s ease-out;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      }
-
-      .nav-links.show {
-        max-height: 600px;
-      }
-
-      .nav-links a {
-        padding: 15px 20px;
-        text-align: center;
-      }
-
-      .nav-container {
-        justify-content: space-between;
-        padding: 15px 20px;
-        min-height: 70px;
-      }
-
-      header {
-        min-height: auto;
-        padding: 60px 20px 40px 20px;
-      }
-
-      header .header-text {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+      .menu-btn { display: block; }
+      .nav-links { flex-direction: column; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 300px; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); border-radius: 8px; overflow: hidden; max-height: 0; transition: max-height 0.3s ease-out; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+      .nav-links.show { max-height: 600px; }
+      .nav-links a { padding: 15px 20px; text-align: center; }
+      .nav-container { justify-content: space-between; padding: 15px 20px; min-height: 70px; }
+      header { min-height: auto; padding: 60px 20px 40px 20px; }
+      header .header-text { position: relative; top: auto; left: auto; transform: none; text-align: center; }
+      #enfoque { padding-top: 60px; } /* Ajuste móvil */
     }
   </style>
 </head>
@@ -235,7 +77,9 @@
   <nav>
     <div class="nav-container">
       <div class="logo-nav">
-        <img src="fotos/Logo.PNG" alt="Logo AR Global Advisory">
+        <a href="https://www.arglobaladvisory.com/">
+          <img src="fotos/Logo.PNG" alt="Logo de AR Global Advisory - Consultoría empresarial">
+        </a>
       </div>
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
       <div class="nav-links" id="navLinks">
@@ -258,24 +102,24 @@
     </div>
   </header>
 
-  <!-- SECCIONES -->
+  <!-- Secciones -->
   <section id="enfoque">
     <h2>Nuestro Enfoque</h2>
-    <p>En <strong>AR Global Advisory</strong> adoptamos un enfoque <strong>data-driven</strong>, apoyando nuestras decisiones en análisis de datos profundo y visión estratégica. Nos comprometemos a acompañar a nuestros clientes como <strong>socios de negocio</strong>, comprendiendo sus desafíos y diseñando <strong>soluciones personalizadas</strong> que impulsan su crecimiento sostenible en cada etapa del desarrollo empresarial. Nuestro objetivo es transformar información en acción efectiva, ayudando a las empresas a tomar decisiones inteligentes y estratégicas.</p>
+    <p>En <strong>AR Global Advisory</strong> adoptamos un enfoque data-driven, apoyando nuestras decisiones en análisis de datos profundo y visión estratégica. Nos comprometemos a acompañar a nuestros clientes como socios de negocio, comprendiendo sus desafíos y diseñando soluciones personalizadas que impulsan su crecimiento sostenible en cada etapa del desarrollo empresarial. Nuestro objetivo es transformar información en acción efectiva, ayudando a las empresas a tomar decisiones inteligentes y estratégicas.</p>
   </section>
 
   <section id="quienes" class="team">
-    <h2>Quienes Somos</h2>
+    <h2>Quiénes Somos</h2>
     <div class="flex">
       <div class="card">
-        <img src="fotos/Socio1.jpg" alt="Isaac Avilés">
+        <img src="fotos/Socio1.jpg" alt="Isaac Avilés - Socio fundador AR Global Advisory">
         <h3>Isaac Avilés</h3>
-        <p>Economista, Master en Dirección Financiera y cursando un MBA en Business Analytics. Especialista en Finanzas y Análisis de Datos con experiencia en banca, fintech, cobranzas, consultoría en PwC (Valoración de Empresas), fondo de inversión en España y proyectos estadísticos en INEC. Combina visión estratégica, análisis cuantitativo y gestión de proyectos para ofrecer soluciones integrales basadas en datos que impulsan el crecimiento sostenible de las empresas.</p>
+        <p>Economista, Master en Dirección Financiera y actualmente cursando un MBA en Business Analytics en Estados Unidos. Cuento con amplia experiencia en banca, fintech, cobranzas y consultoría empresarial, habiendo liderado equipos financieros en diversas instituciones. Mi trayectoria combina visión estratégica, análisis cualitativo y cuantitivo, y gestión de proyectos, lo que me permite ofrecer soluciones integrales y basadas en datos para generar eficiencias e impulsar el crecimiento sostenible de las empresas.</p>
       </div>
       <div class="card">
-        <img src="fotos/Socio2.jpg" alt="Maria José Romero">
+        <img src="fotos/Socio2.jpg" alt="Maria José Romero - Socia fundadora AR Global Advisory">
         <h3>Maria José Romero</h3>
-        <p>Economista, Master en Análisis Económico del Derecho y Gestión Pública. Especialista en inversiones, finanzas y consultoría de negocios, enfocada en impulsar el crecimiento integral de las empresas mediante la optimización de procesos, innovación y planificación estratégica. Su experiencia permite diseñar soluciones personalizadas para el desarrollo sostenible y la expansión corporativa.</p>
+        <p>Economista, Master en Análisis Económico del Derecho y Gestión Pública. Cuento con amplia experiencia en el sector de combustibles, automotriz y restaurantes. Especialista en inversiones, finanzas y consultoría de negocios. Mi experiencia se centra en impulsar el crecimiento integral de empresas, diseñando estrategias que optimizan procesos, mejoran la eficiencia operativa y fortalecen la toma de decisiones. He participado en proyectos que combinan innovación, planificación corporativa y gestión de recursos, permitiendo a las empresas alcanzar sus objetivos con visión a largo plazo.</p>
       </div>
     </div>
   </section>
@@ -287,7 +131,7 @@
       <div class="card">📈 Consultoría Estratégica</div>
       <div class="card">⚖️ Consultoría Legal</div>
       <div class="card">📢 Consultoría Comercial</div>
-      <div class="card">👥 Consultoría Gestión de Talento Humano</div>
+      <div class="card">👥 Consultoría en Gestión de Talento Humano</div>
     </div>
   </section>
 
@@ -304,27 +148,26 @@
 
   <footer id="contacto">
     <h2>Contáctanos</h2>
-    <p>📩 iaviles@arglobaladvisory.com | 📩 mjromero@arglobaladvisory.com</p>
+    <p>📩 <a href="mailto:iaviles@arglobaladvisory.com">iaviles@arglobaladvisory.com</a> | 📩 <a href="mailto:mjromero@arglobaladvisory.com">mjromero@arglobaladvisory.com</a></p>
     <p>📞 +593 96 387 2973 | 📞 +1 561 913 7969</p>
-    <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p>
+    <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
-
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         const navHeight = document.querySelector('nav').offsetHeight;
-        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const extraMargin = 10;
+        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - extraMargin;
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
         document.getElementById("navLinks").classList.remove('show');
       });
     });
-
     document.addEventListener('click', function(e) {
       const navLinks = document.getElementById("navLinks");
       const menuBtn = document.querySelector('.menu-btn');
@@ -332,6 +175,21 @@
         navLinks.classList.remove('show');
       }
     });
+  </script>
+
+  <!-- JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AR Global Advisory",
+    "url": "https://www.arglobaladvisory.com/",
+    "logo": "https://www.arglobaladvisory.com/fotos/Logo.PNG",
+    "description": "Consultoría estratégica, financiera, legal y comercial en Ecuador, Estados Unidos y Latinoamérica.",
+    "email": "info@arglobaladvisory.com",
+    "telephone": "+1 561 913 7969",
+    "sameAs": ["https://www.linkedin.com/avilesromero-globaladvisory"]
+  }
   </script>
 </body>
 </html>
