@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AR Global Advisory</title>
-  <meta name="description" content="AR Global Advisory ofrece consultoría empresarial en finanzas, comercial, talento humano y legal. Impulsamos el crecimiento sostenible de empresas con estrategias claras y soluciones integrales.">
-  <meta name="keywords" content="consultoría financiera, consultoría comercial, consultoría de talento humano, consultoría legal, asesoría para empresas, estrategia empresarial, AR Global Advisory">
-  <meta name="author" content="AR Global Advisory">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Global Advisory</title>
   <style>
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* NAVBAR */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* ================== NAVBAR ================== */
     nav {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       position: sticky;
@@ -19,37 +24,61 @@
       z-index: 1000;
       width: 100%;
     }
+
     .nav-container {
       max-width: 1400px;
       width: 100%;
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; /* opciones centradas en PC */
       position: relative;
-      padding: 20px;
-      min-height: 80px;
+      padding: 15px 20px; /* altura ligeramente mayor que el logo */
+      min-height: 70px; /* asegura altura mínima del navbar */
     }
+
     .logo-nav {
       position: absolute;
       left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
-    .logo-nav img { width: 180px; height: auto; }
-    .nav-links { display: flex; gap: 25px; justify-content: center; flex: 1; }
-    .nav-links a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    .nav-links a:hover { color: #00c3ff; }
+
+    .logo-nav img {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00c3ff;
+    }
+
     .menu-btn {
       display: none;
       font-size: 2rem;
       color: #fff;
       cursor: pointer;
       position: absolute;
-      right: 40px;
+      right: 25px; /* margen extra del borde derecho */
       top: 50%;
       transform: translateY(-50%);
+      z-index: 1001;
     }
 
-    /* HEADER */
+    /* ================== HEADER ================== */
     header {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
@@ -57,6 +86,7 @@
       position: relative;
       min-height: 220px;
     }
+
     header .header-text {
       position: absolute;
       top: 50%;
@@ -65,13 +95,38 @@
       text-align: center;
       max-width: 700px;
     }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; margin: 5px 0; }
 
-    /* SECCIONES */
-    section { scroll-margin-top: 90px; padding: 100px 20px; max-width: 1200px; margin: auto; }
-    section h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: #2c5364; }
-    .flex { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    /* ================== SECCIONES ================== */
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #2c5364;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
     .card {
       flex: 1 1 250px;
       border: 1px solid #ddd;
@@ -81,6 +136,7 @@
       background: #f9f9f9;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .team img {
       width: 200px;
       height: 200px;
@@ -89,44 +145,72 @@
       margin-bottom: 15px;
     }
 
-    /* FOOTER */
-    footer { background: #203a43; color: #fff; text-align: center; padding: 30px 20px; }
-    footer a { color: #00c3ff; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+    /* ================== FOOTER ================== */
+    footer {
+      background: #203a43;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
 
-    /* RESPONSIVE */
+    footer a {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================== RESPONSIVE NAVBAR ================== */
     @media screen and (max-width: 800px) {
-      .nav-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-        min-height: 80px;
+      .menu-btn {
+        display: block;
       }
-      .logo-nav { position: relative; left: auto; }
-      .logo-nav img { width: 150px; height: auto; display: block; }
-      .menu-btn { display: block; font-size: 2rem; cursor: pointer; z-index: 1001; }
 
-      /* MENÚ SEPARADO DE NAVBAR */
       .nav-links {
-        position: relative;
-        top: 0;
-        left: 0;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
+        position: absolute;
+        top: 100%; /* justo debajo del navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 300px;
         background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        margin: 0 auto;
-        border-radius: 0 0 8px 8px;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        border-radius: 8px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       }
-      .nav-links.show { max-height: 500px; padding: 10px 0; }
-      .nav-links a { padding: 10px 20px; width: 100%; box-sizing: border-box; text-align: center; }
 
-      header { min-height: auto; padding: 60px 20px 40px 20px; }
-      header .header-text { position: relative; top: auto; left: auto; transform: none; text-align: center; }
+      .nav-links.show {
+        max-height: 600px;
+      }
+
+      .nav-links a {
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .nav-container {
+        justify-content: space-between;
+        padding: 15px 20px; /* mismo que PC */
+        min-height: 70px; /* misma altura que PC */
+      }
+
+      header {
+        min-height: auto;
+        padding: 60px 20px 40px 20px;
+      }
+
+      header .header-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -140,10 +224,10 @@
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#enfoque">Consultoría Integral</a>
-        <a href="#quienes">Nuestro Equipo</a>
-        <a href="#servicios">Servicios Empresariales</a>
-        <a href="#proyectos">Proyectos Destacados</a>
+        <a href="#enfoque">Nuestro Enfoque</a>
+        <a href="#quienes">Quienes Somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contáctanos</a>
       </div>
     </div>
@@ -153,37 +237,85 @@
   <header id="home">
     <div class="header-text">
       <h1>AR Global Advisory</h1>
-      <p>Tu aliado estratégico para decisiones empresariales en finanzas, comercial, talento humano y legal.</p>
+      <p>“Tu aliado estratégico para decisiones empresariales”</p>
       <p>Brindamos asesoría integral de negocios para impulsar el crecimiento sostenible de nuestros clientes.</p>
     </div>
   </header>
 
-  <!-- SECCIONES (enfoque, equipo, servicios, proyectos, contacto) -->
-  <section id="enfoque"><h2>Consultoría Integral para Empresas</h2><p>En AR Global Advisory ofrecemos soluciones estratégicas y personalizadas en <strong>finanzas, comercial, talento humano y legal</strong>. Ayudamos a empresas a crecer de manera sostenible mediante análisis profundo y visión estratégica.</p></section>
-  <section id="quienes" class="team"><h2>Nuestro Equipo de Expertos</h2><div class="flex"><div class="card"><img src="fotos/Socio1.jpg" alt="Isaac Avilés, especialista en consultoría financiera y análisis de datos"><h3>Isaac Avilés</h3><p>Experto en <strong>consultoría financiera</strong>, modelación financiera y análisis de datos para empresas.</p></div><div class="card"><img src="fotos/Socio2.jpg" alt="Maria José Romero, especialista en inversiones y evaluación de proyectos"><h3>Maria José Romero</h3><p>Especialista en <strong>inversiones y evaluación de proyectos</strong>, innovación y gestión estratégica para empresas.</p></div></div></section>
-  <section id="servicios"><h2>Servicios Empresariales</h2><div class="flex"><div class="card">📊 Consultoría Financiera para empresas</div><div class="card">📈 Consultoría Estratégica y Comercial</div><div class="card">⚖️ Consultoría Legal Empresarial</div><div class="card">📢 Consultoría Comercial y Marketing</div><div class="card">👥 Gestión de Talento Humano y Desarrollo Organizacional</div></div></section>
-  <section id="proyectos"><h2>Proyectos Destacados</h2><div class="flex"><div class="card">Optimización financiera empresarial</div><div class="card">Modelo de rentabilidad y crecimiento</div><div class="card">Expansión estratégica y nuevos mercados</div><div class="card">Estudios de pre-factibilidad para proyectos corporativos</div><div class="card">Asesoría corporativa integral en nuevos negocios</div></div></section>
-  <footer id="contacto"><h2>Contáctanos</h2><p>📩 iaviles@arglobaladvisory.com | 📩 mjromero@arglobaladvisory.com</p><p>📞 +593 96 387 2973 | 📞 +1 561 913 7969</p><p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p></footer>
+  <!-- Secciones -->
+  <section id="enfoque">
+    <h2>Nuestro Enfoque</h2>
+    <p>En AR Global Advisory trabajamos bajo un enfoque basado en datos, análisis profundo y visión estratégica. Creemos en acompañar a nuestros clientes como socios, entendiendo sus retos y diseñando soluciones a medida para cada etapa de su negocio.</p>
+  </section>
 
-  <!-- JS hamburguesa -->
+  <section id="quienes" class="team">
+    <h2>Quienes Somos</h2>
+    <div class="flex">
+      <div class="card">
+        <img src="fotos/Socio1.jpg" alt="Socio 1">
+        <h3>Isaac Avilés</h3>
+        <p>Especialista en Finanzas y Análisis de Datos. Experiencia en banca, modelación financiera y consultoría empresarial.</p>
+      </div>
+      <div class="card">
+        <img src="fotos/Socio2.jpg" alt="Socio 2">
+        <h3>Maria José Romero</h3>
+        <p>Especialista en Inversiones y Consultoría de Negocios. Trayectoria en proyectos corporativos, innovación y gestión empresarial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="flex">
+      <div class="card">📊 Consultoría Financiera</div>
+      <div class="card">📈 Consultoría Estratégica</div>
+      <div class="card">⚖️ Consultoría Legal</div>
+      <div class="card">📢 Consultoría Comercial</div>
+      <div class="card">👥 Consultoría Gestión de Talento Humano</div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="flex">
+      <div class="card">Optimización financiera</div>
+      <div class="card">Modelo de rentabilidad</div>
+      <div class="card">Expansión estratégica</div>
+      <div class="card">Estudios de pre-factibilidad</div>
+      <div class="card">Asesoría corporativa en nuevos negocios</div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <h2>Contáctanos</h2>
+    <p>📩 iaviles@arglobaladvisory.com | 📩 mjromero@arglobaladvisory.com</p>
+    <p>📞 +593 96 387 2973 | 📞 +1 561 913 7969</p>
+    <p>Síguenos en <a href="https://www.linkedin.com/avilesromero-globaladvisory">LinkedIn</a></p>
+  </footer>
+
   <script>
     function toggleMenu() {
-      const navLinks = document.getElementById("navLinks");
-      navLinks.classList.toggle("show");
+      document.getElementById("navLinks").classList.toggle("show");
     }
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.remove('show');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const extraMargin = 10;
+        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - extraMargin;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        document.getElementById("navLinks").classList.remove('show');
       });
     });
 
-    document.addEventListener('click', (event) => {
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', function(e) {
       const navLinks = document.getElementById("navLinks");
-      const menuBtn = document.querySelector(".menu-btn");
-      if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) {
-        navLinks.classList.remove("show");
+      const menuBtn = document.querySelector('.menu-btn');
+      if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('show');
       }
     });
   </script>
