@@ -48,7 +48,7 @@
       transform: translate(-50%, -50%); 
       text-align: center; 
       margin: auto;
-      max-width: 1800px; /* aumentado para mayor ancho */
+      max-width: 1800px;
       padding: 0 10px; 
     }
     header h1 { font-size: 3rem; margin-bottom: 10px; }
@@ -58,7 +58,7 @@
     section { padding: 50px 10px; max-width: 1200px; margin: auto; text-align: center; }
     section h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: #2c5364; }
     .flex { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .card { flex: 1 1 250px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; background: #f9f9f9; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .card { flex: 1 1 250px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; background: #f9f9f9; box-shadow: 0 2px 6px rgba(0,0,0,0.1); cursor: pointer; }
     .team img { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; }
 
     /* Sección "Nuestro Enfoque" alineada con Home */
@@ -69,6 +69,21 @@
     footer a { color: #00c3ff; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* Cuadro de descripción de servicio */
+    #servicioDescripcion {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #2c5364;
+      border-radius: 8px;
+      background: #f1f8fc;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
     @media screen and (max-width: 800px) {
       .menu-btn { display: block; }
       .nav-links { flex-direction: column; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 300px; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); border-radius: 8px; overflow: hidden; max-height: 0; transition: max-height 0.3s ease-out; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
@@ -77,7 +92,7 @@
       .nav-container { justify-content: space-between; padding: 15px 20px; min-height: 70px; }
       header { min-height: auto; padding: 60px 20px 40px 20px; }
       header .header-text { position: relative; top: auto; left: auto; transform: none; text-align: center; }
-      #enfoque { padding-top: 60px; } /* Ajuste móvil */
+      #enfoque { padding-top: 60px; }
     }
   </style>
 </head>
@@ -142,6 +157,8 @@
       <div class="card">📢 Consultoría Comercial</div>
       <div class="card">👥 Consultoría en Gestión de Talento Humano</div>
     </div>
+    <!-- Cuadro de descripción de servicio -->
+    <div id="servicioDescripcion"></div>
   </section>
 
   <section id="proyectos">
@@ -182,6 +199,36 @@
       const menuBtn = document.querySelector('.menu-btn');
       if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
         navLinks.classList.remove('show');
+      }
+    });
+
+    // Funcionalidad para mostrar descripción de servicios
+    const servicios = document.querySelectorAll('#servicios .card');
+    const descripcionDiv = document.getElementById('servicioDescripcion');
+
+    const descripciones = {
+      "📊 Consultoría Financiera": "Consultoría integral en finanzas: análisis financiero, planificación, control presupuestario, optimización de recursos, inversiones y financiamiento.",
+      "📈 Consultoría Estratégica": "Asesoría en visión y objetivos estratégicos, análisis de mercado, planes de crecimiento y toma de decisiones inteligentes para maximizar resultados.",
+      "⚖️ Consultoría Legal": "Servicios legales corporativos, cumplimiento normativo, contratos, constitución de empresas y gestión de riesgos legales para tu negocio.",
+      "📢 Consultoría Comercial": "Diseño de estrategias comerciales, optimización de procesos de ventas y marketing, expansión de mercado y posicionamiento de marca.",
+      "👥 Consultoría en Gestión de Talento Humano": "Reclutamiento, desarrollo y capacitación de talento, planificación de recursos humanos y gestión del desempeño para potenciar tu equipo."
+    };
+
+    const descripcionGeneral = "En AR Global Advisory brindamos un enfoque integral y personalizado, combinando análisis de datos, planificación estratégica y experiencia corporativa para apoyar a tu empresa en cada etapa de su desarrollo.";
+
+    servicios.forEach(servicio => {
+      servicio.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const texto = this.textContent.trim();
+        descripcionDiv.innerHTML = `<p>${descripcionGeneral}</p><strong>${texto}</strong><p>${descripciones[texto]}</p>`;
+        descripcionDiv.style.display = 'block';
+        descripcionDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!descripcionDiv.contains(e.target) && ![...servicios].some(s => s.contains(e.target))) {
+        descripcionDiv.style.display = 'none';
       }
     });
   </script>
